@@ -24,8 +24,6 @@ module.exports = () => {
         favicon: './favicon.ico'
       }),
       new InjectManifest({
-        // These are some common options, and not all are required.
-        // Consult the docs for more info.
         swSrc: './src-sw.js',
         swDest: './src-sw.js'
       }),

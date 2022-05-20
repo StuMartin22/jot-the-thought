@@ -1,7 +1,13 @@
-import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import {Workbox} from 'workbox-window';
+
+if ('serviceWorker' in navigator) {
+  const wb = new Workbox('/sw.js');
+
+  wb.register();
+}
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
@@ -34,10 +40,11 @@ if (typeof editor === 'undefined') {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
+    console.log('loaded')
     navigator.serviceWorker.register('/src-sw.js').then(registration => {
-      console.log('SW registered: ', registration);
+      // console.log('SW registered: ', registration);
     }).catch(registrationError => {
-      console.log('SW registration failed: ', registrationError);
+      // console.log('SW registration failed: ', registrationError);
     });
   });
 }

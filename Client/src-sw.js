@@ -5,6 +5,7 @@ const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
 const { StaleWhileRevalidate } = require('workbox-strategies');
+// const WorkboxPlugin = require('workbox-webpack-plugin');
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -36,9 +37,9 @@ registerRoute(
     // Name of the cache storage.
     cacheName: 'page-cache',
     plugins: [
-      // This plugin will cache responses with these headers to a maximum-age of 30 days
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
       }),
     ],
   })

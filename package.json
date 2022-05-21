@@ -2,7 +2,7 @@
 "scripts": {
   "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
   "start": "npm run build && cd server && node server.js",
-  "server": "cd server nodemon server.js --ignore client",
+  "server": "cd server && nodemon server.js --ignore client",
   "build": "cd client && npm run build",
   "install": "cd client && npm install",
   "client": "cd client && npm start"
@@ -14,6 +14,7 @@
   "express": "^4.18.1"
 },
 "devDependencies": {
-  "concurrently": "^7.2.0"
+  "concurrently": "^7.2.0",
+  "nodemon": "^2.0.4"
 }
 }

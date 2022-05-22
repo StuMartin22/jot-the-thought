@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.config.js"
   },
   "author": "2U",
   "license": "UNLICENSED",

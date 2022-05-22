@@ -25,9 +25,11 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: './src-sw.js'
+        swDest: 'src-sw.js'
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Jot the Thought',
         short_name: 'jtt',
         description: 'text editor for smarties',

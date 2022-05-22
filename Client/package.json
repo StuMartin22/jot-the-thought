@@ -23,11 +23,11 @@
     "webpack-pwa-manifest": "^4.3.0",
     "workbox-core": "^6.5.3",
     "workbox-webpack-plugin": "^6.5.3",
-    "workbox-window": "^6.5.3"
+    "workbox-window": "^6.5.3",
+    "webpack": "^5.51.1"
   },
   "dependencies": {
     "code-mirror-themes": "^1.0.0",
-    "idb": "^6.1.5",
-    "webpack": "^5.51.1"
+    "idb": "^6.1.5"
   }
 }
